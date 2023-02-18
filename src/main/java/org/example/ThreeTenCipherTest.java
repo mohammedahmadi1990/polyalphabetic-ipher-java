@@ -1,8 +1,8 @@
 package org.example;
 
 /**
- *
- * @author maha
+ * This is the main method to test EncryptDecrypt.java, ThreeTenCipher.java, NoTextException.java classes
+ * @author Med
  */
 public class ThreeTenCipherTest {
 
@@ -156,11 +156,34 @@ public class ThreeTenCipherTest {
         P1.setKeys(A, text1.length());
         EncDec.encrypt();
         String text2 = EncDec.decrypt();
-        System.out.println(text2);// me
         if (text1.equals(text2))
             System.out.println("Yay");
 
         // create more testers for textArxhive of ThreeTenCipher
+        String text3 = new String("Yes 1234 we are. new students");
+        ThreeTenCipher P2 = new ThreeTenCipher();
+        EncryptDecrypt EncDec2 = new EncryptDecrypt();
+        P2.setPlainText(text3);
+        EncDec2.setPlainTextSize(text3.length());
+        P2.setKeys(A, text3.length());
+        EncDec2.encrypt();
+        String text4 = EncDec2.decrypt();
+        if (text3.equals(text4))
+            System.out.println("Yay2");
+
+        String text5 = new String("Aaaaaaaaaaaaaaaaaaaaaaaaa bbbbbbbbbbb 123456 wwwwwwwwwwwwwzzzzzzzzzzz" +
+                "cccccccccccccccccccccccccc eeeeeeeeeeeeee r r r r ppppppppppppppppppppp 45 wwwwwwwwwwwwwwwwwwwwdddddddddddddddw" +
+                "33333333333333333333333333 rrrrrrrrrrrrrrrrrrrreaas eeeeeeeee gfgrrrrrrrrrrrrrrrrrrrrrrrrr" +
+                "ddddddddddddddddddddddd");
+        ThreeTenCipher P3 = new ThreeTenCipher();
+        EncryptDecrypt EncDec3 = new EncryptDecrypt();
+        P3.setPlainText(text5);
+        EncDec3.setPlainTextSize(text5.length());
+        P3.setKeys(A, text5.length());
+        EncDec3.encrypt();
+        String text6 = EncDec3.decrypt();
+        if (text5.equals(text6))
+            System.out.println("Yay3");
 
     }
 }

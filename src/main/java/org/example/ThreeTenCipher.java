@@ -1,12 +1,13 @@
 package org.example;
 
 /**
- * @author maha
+ * @author Med
  */
 public class ThreeTenCipher {
 
     /**
-     * // constructor that  initializes the keys array, the textArchive, the cipherText, the plaintext, and sets the sizeStored to 0.
+     * constructor that  initializes the keys array, the textArchive,
+     * the cipherText, the plaintext, and sets the sizeStored to 0.
      */
     public ThreeTenCipher() {
         keys = new char[5][26];
@@ -19,7 +20,7 @@ public class ThreeTenCipher {
     /**
      * stores the 5 cipher alphabets each of 26 characters length.
      */
-    private static char[][] keys;
+    public static char[][] keys;
 
     /**
      * This is the cipher text to be decrypted.
@@ -74,7 +75,7 @@ public class ThreeTenCipher {
      * @return returns true if successful
      */
     public boolean cleanArchivedText(int start, int size) throws NoTextException {
-        if (sizeStored == 0) {
+        if (isEmpty()) {
             throw new NoTextException();
         }
         if (start < 0 || start >= sizeStored || start + size > sizeStored) {
@@ -120,7 +121,7 @@ public class ThreeTenCipher {
     }
 
     /**
-     * cipherText setter
+     * cipherText setter method
      *
      * @param cipher to set cipherText
      */
@@ -129,7 +130,7 @@ public class ThreeTenCipher {
     }
 
     /**
-     * cipherText getter
+     * cipherText getter method
      *
      * @return cipherText
      */
@@ -138,17 +139,16 @@ public class ThreeTenCipher {
     }
 
     /**
-     * plaiText setter
+     * plaiText setter method
      *
      * @param plain to set plainText
      */
     public void setPlainText(String plain) {
         plainText = plain;
-        insertText(plainText.toCharArray());
     }
 
     /**
-     * plainText getter
+     * plainText getter method
      *
      * @return plainText
      */
@@ -169,7 +169,7 @@ public class ThreeTenCipher {
     }
 
     /**
-     * getTextArchive
+     * this method returns a copy of textArchive array from start point to the size.
      * returns the characters of textArchive from start to size-1
      */
     public char[] getTextArchive(int start, int size) {
